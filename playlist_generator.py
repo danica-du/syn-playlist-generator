@@ -1,6 +1,7 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+import config
 
 def get_synonyms(keyword):
     """
@@ -76,8 +77,8 @@ def get_songlist(word, n):
     songlist = []  # each element is: [<song title>, <album>, <artist>, <duration>]
 
 
-    CLIENT_ID = '*****'
-    CLIENT_SECRET = '*****'  # can be reset whenever
+    CLIENT_ID = config.CLIENT_ID
+    CLIENT_SECRET = config.CLIENT_SECRET  # can be reset whenever
     
     AUTH_URL = 'https://accounts.spotify.com/api/token'
     # POST
