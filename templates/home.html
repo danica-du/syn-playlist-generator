@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <meta charset="UTF-8"> -->
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html {
+                font-size: 18px;
+            }
+            input[type=text] {
+                padding: 6px 10px;
+                box-sizing: border-box;
+                border-radius: 5px;
+            }
+            form {
+                margin: 0 auto;
+                width: 100%;
+            }
+            body {
+                color:black;
+                /* font-family: "Questrial", sans-serif; */
+                font-family: 'Trebuchet MS', sans-serif;
+                background-color: #ffc2dd;
+                background-image: linear-gradient(
+                    45deg,
+                    #ff97e3 25%,
+                    transparent 25%,
+                    transparent 75%,
+                    #ff97e3 75%,
+                    #ff97e3
+                ),
+                linear-gradient(
+                    -45deg,
+                    #ff97e3 25%,
+                    transparent 25%,
+                    transparent 75%,
+                    #ff97e3 75%,
+                    #ff97e3
+                );
+                background-size: 60px 60px;
+                background-position: 0 0;
+                animation: slide 10s infinite linear;
+            }
+            @keyframes slide {
+                from {
+                background-position: 0 0;
+                }
+            
+                to {
+                background-position: -120px 60px;
+                }
+            }
+            .modal {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                /* width: auto; */
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1.6rem 3rem;
+                border: 3px solid black;
+                border-radius: 15px;
+                background: white;
+                box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+                width: 40%;
+            }
+            .message {
+                font-size:1.1rem;
+                margin-bottom: 1.6rem;
+                margin-top: 0;
+            }
+            .btn {
+                color:inherit;
+                font-family:inherit;
+                font-size: inherit;
+                /* background: white; */
+                background: rgb(253, 244, 255);
+                padding: 0.3rem 3.4rem;
+                border: 2px solid black;
+                margin-right: 2.6rem;
+                box-shadow: 0 0 0 black;
+                transition: all 0.2s;
+                border-radius: 10px;
+            }
+            .btn:last-child {
+                margin: 0;
+            }
+            .btn:hover {
+                box-shadow: 0.4rem 0.4rem 0 black;
+                transform: translate(-0.4rem, -0.4rem);
+            }
+            .btn:active {
+                box-shadow: 0 0 0 black;
+                transform: translate(0, 0);
+            }
+            .options {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .buttonHolder {
+                text-align: center;
+            }
+    
+        </style>
+    </head>
+
+    <body>
+
+        <div class="modal">
+            <p class="message">
+                <h1>LET'S MAKE A PLAYLIST USING SYNONYMS!</h1>
+                <form action="{{ url_for('show_playlist') }}" method="POST">
+                    Keyword: <input type="text" name="keyword"><br><br>
+                    Number of songs: <input type="text" name="numsongs" size="4"><br><br>
+                    <div class="buttonHolder">
+                        <button class="btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </p>
+
+          </div>
+    </body>
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="home.css">
+    </head>
+
+    <body>
+        Taking input from web<br><br>
+
+        
+        <form action="{{ url_for('show_playlist') }}" method="POST">
+            Keyword: <input type="text" name="keyword"><br><br>
+            Number of songs: <input type="text" name="numsongs"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html> -->
