@@ -178,6 +178,3 @@ def get_playlist(syns, n):
         playlist += rem_songlist
 
     return playlist
-
-# syns = get_synonyms("happy")
-# get_playlist(syns, 10)
